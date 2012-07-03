@@ -7,6 +7,8 @@
 		<link rel="stylesheet" href="{{ static_url("style.css") }}" type="text/css" media="screen">
 		<link href='http://fonts.googleapis.com/css?family=Trade+Winds' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Swanky+and+Moo+Moo' rel='stylesheet' type='text/css'>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
 	</head>
 	<body>
 		<div id="header">
@@ -16,9 +18,9 @@
 						<h1 id="title"><a href="{{ url }}">{{ title }}</a></h1>
 						<div id="description">A BLOG</div>
 						<ul class="right">
-							<li><a href="">Google+</a></li>
-							<li><a href="">GitHub</a></li>
-							<li><a href="">Twitter</a></li>
+							<li><a href="https://plus.google.com/100204491389909955903">Google+</a></li>
+							<li><a href="https://github.com/MartianZ">GitHub</a></li>
+							<li><a href="https://twitter.com/#!/martian_zhu">Twitter</a></li>
 						</ul>
 					</div>
 				</div>
@@ -65,5 +67,12 @@
 						© MartianZ, All rights reserved.
 		</div> <!--div footer-->
 		
+		<script>
+		$("img").each(function(){
+			if ($(this).attr("src").indexOf("i.imgur.com") != -1) {
+				$(this).attr("src","http://imgur.4321.la/?img=" + $(this).attr("src"));
+			}
+		});
+		</script>
 	</body>
 </html>
