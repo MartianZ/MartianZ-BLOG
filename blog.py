@@ -84,9 +84,16 @@ class ArticleHandler(tornado.web.RequestHandler):
 		
 		self.render("template/article.html", title=site_config['title'], url=site_config["url"], article = article)
 
+
+class NotFoundHandler(tornado.web.RequestHandler):
+    def prepare(self):
+    	self.set_status(404)
+	self.render("template/404.html")
+
 application = tornado.web.Application([
 	(r"/", MainHandler),
 	(r"/article/(.*)", ArticleHandler),
+	(r"/.*", NotFoundHandler),
 ], **settings)
 
 if __name__ == "__main__":
