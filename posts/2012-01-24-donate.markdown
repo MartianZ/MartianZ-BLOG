@@ -1,0 +1,22 @@
+---
+layout: post
+title: "捐赠 4321.La - Support future development of 4321.La"
+date: 2012-01-24 22:55
+comments: true
+categories: notes
+---
+非常高兴看到我制作的软件能够帮助到您！
+
+如果您喜欢我的作品，可以捐赠4321.La以支持我们后续的开发。
+
+<!-- more -->
+
+
+
+#捐赠方式：
+##1.[Donate via PayPal](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=fzyadmin%40gmail%2ecom&item_name=Support%20future%20development%20of%204321.La%20app&no_shipping=1&no_note=1&tax=0&currency_code=USD&lc=US&bn=PP%2dDonationsBF&charset=UTF%2d8)
+##2.[Donate via 支付宝](https://me.alipay.com/martian)
+##3.[Donate via Amazon.cn](http://www.amazon.cn/registry/wishlist/1JUEM4PZIL82C)
+
+
+###Thanks for being awesome!

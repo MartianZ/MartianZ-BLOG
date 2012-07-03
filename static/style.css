@@ -1,0 +1,310 @@
+* {
+	background: transparent;
+	margin: 0;
+	border: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
+
+body {
+	font: 14px Helvetica,"Hiragino Sans GB","Hiragino Sans GB W3",Arial,sans-serif;
+	background: transparent url(background.png) repeat fixed;
+
+}
+
+a {
+	text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0.5em 0;
+	font-weight: normal;
+	-webkit-font-smoothing: antialiased;
+}
+
+/* 顶部 */
+#nav_wrapper {
+	background: rgb(208,208,208);
+	height: 50px;
+}
+
+#nav {
+	background: black;
+	height: 35px;
+	
+}
+
+#nav .inner {
+	width: 960px;
+	margin: 0 auto;
+}
+
+#title {
+	color: rgb(208,208,208);
+	text-shadow: 0 1px 1px black;
+	font-size: 22px;
+	font-family: "Trade Winds", "Abel", "Helvetica Neue", Helvetica, Arial, Sans-serif;
+	float: left;
+	height: 32px;
+	line-height: 32px;
+	margin: 0;
+}
+
+#title a {
+	color: rgb(208,208,208);
+	-webkit-transition: color .25s linear;
+	transition: color .25s linear;
+}
+
+#nav a:hover {
+	color: rgb(255,255,255);
+	-webkit-transition: color .25s linear;
+	transition: color .25s linear;
+}
+
+#description {
+	padding: 3px 6px;
+	display: block;
+	float: left;
+	height: 32px;
+	line-height: 32px;
+	font-size: 16px;
+	font-family: "Swanky and Moo Moo", "Abel", "Helvetica Neue", Helvetica, Arial, Sans-serif;
+	color: rgb(200,200,200);
+	margin-left: 5px;
+}
+
+#nav .right {
+	float: right;
+	list-style: none;
+	font-size: 11px;
+	margin-top: 10px;
+	font-family: "Trade Winds", "Abel", "Helvetica Neue", Helvetica, Arial, Sans-serif;
+
+}
+
+#nav .right a {
+	display: block;
+	color: #CCC;
+	padding: 0 10px;
+}
+#nav .right li {
+	display: block;
+	float: left;
+	color: rgb(200,200,200);
+}
+
+
+/* 中部内容 */
+#content {
+	width: 960px;
+	margin: 20px auto 0 auto;
+}
+
+#article_list {
+	list-style-type: none;
+}
+
+.article {
+	font-size: 16px;
+	padding: 15px;
+	background: rgb(250,250,250);
+	margin: 40px auto;
+	width: 777px;
+	border: 1px 
+	white solid;
+	-webkit-box-shadow: 0 1px 14px rgba(10,10,10,0.3);
+	-moz-box-shadow: 0 1px 14px rgba(10,10,10,0.3);
+	box-shadow: 0 1px 14px rgba(10,10,10,0.3);
+	text-shadow: 0 1px 1px white;
+}
+
+.article .inner {
+	background-color: rgb(250,250,250);
+	padding: 10px;
+}
+
+.article_title {
+	margin: 0;
+	text-align: center;
+	font-size: 25px;
+	line-height: 25px;
+	/*letter-spacing: -0.5px;*/
+	text-shadow: 0 1px 1px rgba(10, 10, 10, 0.3);
+	font-family: "Abel", "Helvetica Neue", Helvetica, Arial, Sans-serif;
+}
+
+.meta_container {
+	margin: 20px 0;
+	border-top: 4px double #8E8E8E;
+	height: 8px;
+	text-align: center;
+	color: #727272;
+}
+
+.meta_container .date {
+	font-size: 12px;
+	font-style: italic;
+	padding: 7px;
+	position: relative;
+	top: -13px;
+	background: rgb(250,250,250);
+}
+
+.article_title {
+	margin: 20px 0px;
+	line-height: 1.5em; 
+}
+
+.article a {
+	color:black;
+	-webkit-transition: color .25s linear;
+	transition: color .25s linear;
+}
+
+.article a:hover {
+	color:rgb(218,62,62);
+	-webkit-transition: color .25s linear;
+	transition: color .25s linear;
+}
+
+
+.article_text {
+	font-size: 14px;
+	margin: 20px 0px;
+	line-height: 1.5em;
+}
+.article_text strong {
+	background: #FEF6A8;
+	color: #533B18;
+	border: 1px #fcfc91 solid;
+	padding: 1px 3px;
+	font-weight: normal;
+}
+.article_text p {
+	margin: 0 0 24px 0;
+	line-height: 1.5em;
+}
+.article_text  h1, .article  h2, .article  h3, .article  h4, .article  h5, .article h6 {
+	font-weight: bold;
+	margin: 0.75em 0;
+}
+.article h1 {
+	font-size: 1.8em;
+}
+.article h2 {
+	font-size: 1.6em;
+}
+.article h3 {
+	font-size: 1.4em;
+}
+.article h4 {
+	font-size: 1.2em;
+}
+.article h5 {
+	font-size: 1.0em;
+}
+.article h6 {
+	font-size: 1.0em;
+}
+.article blockquote {
+	margin: 10px 0;
+	padding: 5px 0 5px 40px;
+	border-left: 5px #7d7d7d solid;
+}
+.article ul, .article ol {
+	margin: 10px 0 10px 20px;
+}
+.article li {
+	margin-bottom: 5px;
+}
+.article img {
+	text-align: center;
+	display: block;
+	margin: 0 auto;
+	border: 5px white solid;
+	-webkit-box-shadow: 0 1px 3px #333;
+	-moz-box-shadow: 0 1px 3px #333;
+	box-shadow: 0 1px 3px #333;
+	max-width: 570px;
+}
+.article pre {
+	margin: 10px;
+	background: rgb(50,50,50);
+	color: white;
+	font: 12px Monaco,monospace;
+	overflow-x: auto;
+	padding: 20px 37px;
+	white-space: pre;
+	word-wrap: normal;
+	text-shadow: 0 -1px 1px rgb(50,50,50);;
+	box-shadow: inset 0 0 10px rgb(50,50,50);;
+}
+.article code {
+	font-size: 14px;
+	font-family: 'Monaco', 'monospace';
+	text-shadow: none;
+}
+
+/* 页码导航 */
+
+#pagenav {
+	width: 810px;
+	height: 40px;
+	line-height: 40px;
+	position: relative;
+	margin: 10px auto;
+	
+	background-color: #FAFAFA;
+	box-shadow: 0 1px 14px rgba(10,10,10,0.3);
+
+}
+
+#pagenav a {
+	color:black;
+	-webkit-transition: color .25s linear;
+	transition: color .25s linear;
+}
+
+#pagenav a:hover {
+	color:rgb(218,62,62);
+	-webkit-transition: color .25s linear;
+	transition: color .25s linear;
+}
+
+.next {
+	position: absolute;
+	padding: 0 30px;
+	right: 0;
+	display: block;
+	height: 40px;
+	line-height:40px; 
+}
+.prev {
+	position: absolute;
+	height: 40px;
+	left: 0;
+	display: block;
+	padding: 0 30px;
+	line-height:40px; 
+}
+
+/* 底部内容 */
+
+#footer {
+	padding: 20px 0;
+	color: #323232;
+	font-size: 11px;
+	text-align: center;
+}
+
+/* 评论 */
+
+.comments {
+	margin-top: 20px;
+}
+.comments_title {
+	border-top: 4px double #8E8E8E;
+	padding-top: 20px;
+	font-size: 18px;
+}
