@@ -8,7 +8,7 @@
 
 body {
 	font: 14px Helvetica,"Hiragino Sans GB","Hiragino Sans GB W3",Arial,sans-serif;
-	background: transparent url(background.png) repeat fixed;
+	background: transparent url("/static/background.png") repeat fixed;
 
 }
 
