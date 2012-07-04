@@ -3,6 +3,8 @@ import tornado.web
 import string, os, sys
 import markdown
 import codecs
+import PyRSS2Gen
+import datetime
 
 site_config = {
 	"title" : "MartianZ!",
@@ -74,6 +76,29 @@ class MainHandler(tornado.web.RequestHandler):
 		else:
 			pnext = False
 		
+		rss_items = []
+		for article in articles:
+			link = site_config["url"]+"/article/"+article["name"]
+			rss_item = PyRSS2Gen.RSSItem(
+				title = article["title"],
+				link = link,
+				description = article["content"],
+				guid = PyRSS2Gen.Guid(link),
+				pubDate = datetime.datetime(	int(article["date"][0:4]),
+								int(article["date"][5:7]),
+								int(article["date"][8:10]),
+								int(article["date"][11:13]),
+								int(article["date"][14:16])))
+			rss_items.append(rss_item)
+		rss = PyRSS2Gen.RSS2(
+			title = site_config["title"],
+			link = site_config["url"],
+			description = "",
+			lastBuildDate = datetime.datetime.utcnow(),
+			items = rss_items)
+
+		if not os.path.isfile("rss.xml"):
+			rss.write_xml(open("rss.xml", "w"))
 			 
 		self.render("template/index.html", title=site_config['title'], url=site_config["url"], articles = articles, prev=prev, pnext=pnext, prevnum=p-3, nextnum=p+3)
 
@@ -90,9 +115,14 @@ class NotFoundHandler(tornado.web.RequestHandler):
     	self.set_status(404)
 	self.render("template/404.html")
 
+class RSSHandler(tornado.web.RequestHandler):
+	def get(self):
+		self.render("rss.xml")
+
 application = tornado.web.Application([
 	(r"/", MainHandler),
 	(r"/article/(.*)", ArticleHandler),
+	(r"/.*\.xml",RSSHandler),
 	(r"/.*", NotFoundHandler),
 ], **settings)
 

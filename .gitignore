@@ -1,5 +1,6 @@
 *.py[co]
 .DS_Store
+rss.xml
 
 # Packages
 *.egg
