@@ -75,30 +75,6 @@ class MainHandler(tornado.web.RequestHandler):
 			pnext = True
 		else:
 			pnext = False
-		
-		rss_items = []
-		for article in articles:
-			link = site_config["url"]+"/article/"+article["name"]
-			rss_item = PyRSS2Gen.RSSItem(
-				title = article["title"],
-				link = link,
-				description = article["content"],
-				guid = PyRSS2Gen.Guid(link),
-				pubDate = datetime.datetime(	int(article["date"][0:4]),
-								int(article["date"][5:7]),
-								int(article["date"][8:10]),
-								int(article["date"][11:13]),
-								int(article["date"][14:16])))
-			rss_items.append(rss_item)
-		rss = PyRSS2Gen.RSS2(
-			title = site_config["title"],
-			link = site_config["url"],
-			description = "",
-			lastBuildDate = datetime.datetime.utcnow(),
-			items = rss_items)
-
-		if not os.path.isfile("rss.xml"):
-			rss.write_xml(open("rss.xml", "w"))
 			 
 		self.render("template/index.html", title=site_config['title'], url=site_config["url"], articles = articles, prev=prev, pnext=pnext, prevnum=p-3, nextnum=p+3)
 
@@ -119,6 +95,44 @@ class RSSHandler(tornado.web.RequestHandler):
 	def get(self):
 		self.render("rss.xml")
 
+def RSSMaker():
+	articles = []
+	post_dir = site_config["post_dir"]
+	file_list = []
+	files = os.listdir(post_dir)
+	
+	for f in files:
+		file_list.append(post_dir + os.sep + f)
+	file_list.sort(reverse=True)
+	
+	for single_file in file_list:
+		article = SingleFileHandler(single_file)
+		if article: articles.append(article)
+		
+	rss_items = []
+	for article in articles:
+		link = site_config["url"]+"/article/"+article["name"]
+		rss_item = PyRSS2Gen.RSSItem(
+			title = article["title"],
+			link = link,
+			description = article["content"],
+			guid = PyRSS2Gen.Guid(link),
+			pubDate = datetime.datetime(	int(article["date"][0:4]),
+							int(article["date"][5:7]),
+							int(article["date"][8:10]),
+							int(article["date"][11:13]),
+							int(article["date"][14:16])))
+		rss_items.append(rss_item)
+		
+	rss = PyRSS2Gen.RSS2(
+		title = site_config["title"],
+		link = site_config["url"],
+		description = "",
+		lastBuildDate = datetime.datetime.utcnow(),
+		items = rss_items)
+
+	rss.write_xml(open("rss.xml", "w"))
+		
 application = tornado.web.Application([
 	(r"/", MainHandler),
 	(r"/article/(.*)", ArticleHandler),
@@ -128,5 +142,6 @@ application = tornado.web.Application([
 
 if __name__ == "__main__":
 	application.listen(8888)
+	RSSMaker()
 	print "MartianZ Burogu Sutato!"
 	tornado.ioloop.IOLoop.instance().start()
