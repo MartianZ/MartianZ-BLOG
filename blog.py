@@ -93,7 +93,9 @@ class NotFoundHandler(tornado.web.RequestHandler):
 
 class RSSHandler(tornado.web.RequestHandler):
 	def get(self):
-		self.render("rss.xml")
+		f = open("rss.xml", "r")
+		self.write(f.read())
+		f.close()
 
 def RSSMaker():
 	articles = []
