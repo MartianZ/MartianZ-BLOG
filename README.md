@@ -9,6 +9,7 @@ MartianZ - BLOG 是 MartianZ 同学在折腾过程中学习Python的产物，是
 	
 	easy_install tornado
 	easy_install markdown
+	easy_install PyRSS2Gen
 	
 使用：
 
