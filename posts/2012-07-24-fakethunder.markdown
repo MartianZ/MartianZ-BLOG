@@ -3,6 +3,9 @@ title: "fakeThunder - OS X迅雷离线非官方客户端[Beta]"
 date: 2012-07-24 10:53
 ---
 
+##由于中转服务器被迅雷限制，暂时无法登录，项目正在重构中。
+
+
 
 fakeThunder，其实我本来想叫他fxxkThunder的，但是想到一个叫fxxk的软件在大家的Dock上也实在是太低俗了，就叫fake好了。
 
