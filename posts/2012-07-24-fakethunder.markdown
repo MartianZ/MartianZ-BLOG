@@ -57,4 +57,4 @@ fakeThunder是一款免费开源软件，软件当前处于Beta阶段，仍有�
 
 有任何使用上的问题，请在当前文章下方留言回复。
 
-软件BUG、技术问题请到这里反馈： <https://github.com/MartianZ/DynamicLyrics/issues>
+软件BUG、技术问题请到这里反馈： <https://github.com/MartianZ/fakeThunder/issues>
