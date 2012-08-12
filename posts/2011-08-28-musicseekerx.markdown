@@ -36,27 +36,4 @@ MusicSeekerX是一款仿MusicSeeker的软件（废话），用来辅助Mac用户
 <!-- more -->
 
 下载地址：
-<http://dl.4321.la/MusicSeekerX.zip>
-
-
-非Lion用户请尝试通过下面的方法修改以运行软件：
-
-经简单修改即可在Mac OS X 10.6下运行，解压后，右键单击MusicSeeker.app，选择显示包内容
-
-方法是将原Contents/Info.plist里的
-
-LSMinimumSystemVersion
-
-10.7
-
-改为
-
-LSMinimumSystemVersion
-
-10.6
-
-在10.6.6下测试通过。
-
-（由G+上面的朋友H Liang提供，10.6的朋友可以试一下，我会在下个版本完美支持10.6版本）
-
-出现全部音乐不能下载情况的朋友，请尝试将DNS改为Google Public Dns：8.8.8.8/8.8.4.4后重试。
+<http://martianlaboratory.com/musicseekerx/MusicSeekerX.zip>
