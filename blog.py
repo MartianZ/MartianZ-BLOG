@@ -71,7 +71,7 @@ class MainHandler(tornado.web.RequestHandler):
 		else:
 			prev = False
 
-		if p + 4 < len(file_list):
+		if p + 4 <= len(file_list):
 			pnext = True
 		else:
 			pnext = False
