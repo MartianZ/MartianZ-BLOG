@@ -1,0 +1,85 @@
+{% autoescape None %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<title>{{ title }}</title>
+		<link rel="stylesheet" href="{{ static_url("style.css") }}" type="text/css" media="screen">
+		<link href='http://fonts.googleapis.com/css?family=Trade+Winds' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Swanky+and+Moo+Moo' rel='stylesheet' type='text/css'>
+		<link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.xml" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	</head>
+	<body>
+		<div id="header">
+			<div id="nav_wrapper">
+				<div id="nav">
+					<div class="inner">
+						<h1 id="title"><a href="{{ url }}">{{ title }}</a></h1>
+						<div id="description">A BLOG</div>
+						<ul class="right">
+							<li><a href="https://plus.google.com/100204491389909955903">Google+</a></li>
+							<li><a href="https://github.com/MartianZ">GitHub</a></li>
+							<li><a href="https://twitter.com/#!/martian_zhu">Twitter</a></li>
+						</ul>
+					</div>
+				</div>
+			</div> 
+		</div> <!--div header-->
+		
+		<div id="content">
+			<ul id="article_list">
+			{% for article in articles %}
+				<li>
+					<div class="article">
+						<div class="inner">
+							<h2 class="article_title"><a href="/article/{{ article["name"] }}">{{ article["title"] }}</a></h2>
+							<div class="meta_container"><span class="date">{{ article["date"] }}</span></div>
+							<div class="article_text">
+								{{ (article["content"]) }}
+							
+							</div>
+						</div>
+					</div>
+				</li>
+			{% end %}
+			</ul>
+		</div> <!--div content-->
+
+		<div id="pagenav">
+			{% if prev %}
+			<a href="/?p={{ prevnum }}" class="prev">上一页</a>
+			{% end %}
+			{% if pnext %}
+			<a href="/?p={{ nextnum }}" class="next">下一页</a>
+			{% end %}
+		</div> <!--div pagenav-->
+		
+		<div id="footer">
+						© MartianZ, All rights reserved.
+		</div> <!--div footer-->
+	
+	
+	<script>
+		//$("img").each(function(){
+		//	if ($(this).attr("src").indexOf("i.imgur.com") != -1) {
+		//		$(this).attr("src","http://imgur.4321.la/?img=" + $(this).attr("src"));
+		//	}
+		//});
+	</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-33535278-2']);
+  _gaq.push(['_setDomainName', '4321.la']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+	</body>
+</html>

@@ -4,69 +4,75 @@
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8">
 		<title>{{ title }}</title>
-		<link rel="stylesheet" href="{{ static_url("style.css") }}" type="text/css" media="screen">
+		<link rel="stylesheet" href="{{ static_url("style2.css") }}" type="text/css" media="screen">
 		<link href='http://fonts.googleapis.com/css?family=Trade+Winds' rel='stylesheet' type='text/css'>
-		<link href='http://fonts.googleapis.com/css?family=Swanky+and+Moo+Moo' rel='stylesheet' type='text/css'>
 		<link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.xml" />
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 	</head>
 	<body>
-		<div id="header">
-			<div id="nav_wrapper">
-				<div id="nav">
-					<div class="inner">
-						<h1 id="title"><a href="{{ url }}">{{ title }}</a></h1>
-						<div id="description">A BLOG</div>
-						<ul class="right">
-							<li><a href="https://plus.google.com/100204491389909955903">Google+</a></li>
-							<li><a href="https://github.com/MartianZ">GitHub</a></li>
-							<li><a href="https://twitter.com/#!/martian_zhu">Twitter</a></li>
-						</ul>
-					</div>
-				</div>
-			</div> 
-		</div> <!--div header-->
-		
 		<div id="content">
-			<ul id="article_list">
-			{% for article in articles %}
-				<li>
-					<div class="article">
-						<div class="inner">
-							<h2 class="article_title"><a href="/article/{{ article["name"] }}">{{ article["title"] }}</a></h2>
-							<div class="meta_container"><span class="date">{{ article["date"] }}</span></div>
-							<div class="article_text">
-								{{ (article["content"]) }}
-							
-							</div>
+			<header>
+			<hgroup>
+				<h1 id="site-title">
+					<a href="{{ url }}" title="MartianZ">{{ title }}</a>
+				</h1>
+				<h2 id="site-description">
+					Here's my blog :)
+				</h2>
+				<h2 class="site-nav">
+					<a href="{{ url }}">首页</a>
+				</h2>
+				<h2 class="site-nav">
+					<a href="#" onclick="javascript:alert('Under Construction!');">照片墙</a>
+				</h2>
+				<h2 class="site-nav">
+					<a href="https://plus.google.com/100204491389909955903">Google+</a>
+				</h2>
+				<h2 class="site-nav">
+					<a href="https://github.com/MartianZ">GitHub</a>
+				</h2>
+				<h2 class="site-nav">
+					<a href="https://twitter.com/#!/martian_zhu">Twitter</a>
+				</h2>
+			</hgroup>
+			</header>
+			
+		<div id="main">
+			<div id="primary">
+				{% for article in articles %}
+				<article>
+					<div class="entry-header">
+						<h1 class="entry-title"><a href="/article/{{ article["name"] }}">{{ article["title"] }}</a></h1>
+						
+						<div class="entry-meta">
+							<span class="sep">Posted on <time class="entry-date">{{ article["date"] }}</time></a></span>
 						</div>
 					</div>
-				</li>
-			{% end %}
-			</ul>
-		</div> <!--div content-->
-
-		<div id="pagenav">
-			{% if prev %}
-			<a href="/?p={{ prevnum }}" class="prev">上一页</a>
-			{% end %}
-			{% if pnext %}
-			<a href="/?p={{ nextnum }}" class="next">下一页</a>
-			{% end %}
-		</div> <!--div pagenav-->
+					
+					<div class="entry-content">
+						{{ (article["content"]) }}
+					</div>
+					
+				</article>
+				{% end %}
+				<nav id="nav-below">
+					{% if pnext %}
+					<div class="nav-previous"><a href="/?p={{ nextnum }}"><span class="meta-nav">←</span> Older posts</a></div>
+					{% end %}
+					{% if prev %}
+					<div class="nav-next"><a href="/?p={{ prevnum }}">Newer posts <span class="meta-nav">→</span></a></div>
+					{% end %}
+				</nav>
+			</div>
+		</div>
 		
-		<div id="footer">
-						© MartianZ, All rights reserved.
-		</div> <!--div footer-->
-	
-	
-	<script>
-		//$("img").each(function(){
-		//	if ($(this).attr("src").indexOf("i.imgur.com") != -1) {
-		//		$(this).attr("src","http://imgur.4321.la/?img=" + $(this).attr("src"));
-		//	}
-		//});
-	</script>
+		<footer>
+			<div class="div-footer">
+							Powered by <a href="https://github.com/MartianZ">MartianZ-BLOG</a>
+			</div>
+		</footer>
+		</div>
+		
+
 <script type="text/javascript">
 
   var _gaq = _gaq || [];
