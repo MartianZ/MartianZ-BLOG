@@ -35,4 +35,4 @@ MusicSeekerX是一款仿MusicSeeker的软件（废话），用来辅助Mac用户
 <!-- more -->
 
 下载地址：
-<http://martianlaboratory.com/musicseekerx/MusicSeekerX302.zip>
+<http://martianlaboratory.com/musicseekerx/MusicSeekerX303.zip>
