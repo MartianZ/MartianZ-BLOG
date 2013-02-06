@@ -14,9 +14,17 @@ categories: notes
 
 
 #捐赠方式：
-##1.[Donate via PayPal](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=fzyadmin%40gmail%2ecom&item_name=Support%20future%20development%20of%204321.La%20app&no_shipping=1&no_note=1&tax=0&currency_code=USD&lc=US&bn=PP%2dDonationsBF&charset=UTF%2d8)
-##2.[Donate via 支付宝](https://me.alipay.com/martian)
+
+##1.[Donate via Alipay](https://me.alipay.com/martian)
+
+##2.[Donate via PayPal](https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=fzyadmin%40gmail%2ecom&item_name=Support%20future%20development%20of%204321.La%20apps)
+
+
 ##3.[Donate via Amazon.cn](http://www.amazon.cn/registry/wishlist/1JUEM4PZIL82C)
 
+##4.[Donate via Amazon.cn (Google Translate)](http://translate.google.com/translate?hl=en&sl=zh-CN&tl=en&u=http%3A%2F%2Fwww.amazon.cn%2Fregistry%2Fwishlist%2F1JUEM4PZIL82C)
+
+
+####(My PayPal account is certified in China, you may not be able to donate. You can choose to purchase a suitable gift which I really need, if you think this is accaptable, by taking a glance at my Amazon Wish List, thank you! )
 
 ###Thanks for being awesome!
