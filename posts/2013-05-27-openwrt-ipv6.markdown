@@ -80,7 +80,7 @@ IPv4由于NAT的存在共享上网是想当的简单（随便一个不懂电脑�
 	
 修改/etc/ndppd.conf
 
-	proxy eth1{
+	proxy eth0{
 		router yes
 		timeout 500
 		ttl 30000
