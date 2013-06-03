@@ -1,5 +1,5 @@
 ---
-title: "电子科技大学清水河校区寝室网络OpenWRT IPv4+IPv6配置"
+title: "电子科技大学(清水河)寝室网络OpenWRT IPv4+IPv6"
 date: 2013-05-27 22:03
 ---
 
