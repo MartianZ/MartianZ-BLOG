@@ -35,7 +35,7 @@ categories: notes
 
 3. ##安装和配置Apache 2
 	
-	这里以worker为例，worker也是Apache 2推荐的MPM，在Ubuntu中，使用下面的命令安装软件包，事实上安装的就是apache2-mpm-worker：
+	这里以worker为例，worker也是Apache 2推荐的MPM，在Ubuntu中，使用下面的命令安装软件包，事实上安装的就是apache2-mpm-worker：
 	
 		$ sudo apt-get install apache2
 	
