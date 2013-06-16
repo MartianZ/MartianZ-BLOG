@@ -1,4 +1,5 @@
 *.py[co]
+test.py
 .DS_Store
 rss.xml
 

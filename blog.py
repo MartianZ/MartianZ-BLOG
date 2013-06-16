@@ -1,3 +1,4 @@
+# -*- encoding: utf8 -*-
 import tornado.ioloop
 import tornado.web
 import string, os, sys
@@ -5,10 +6,13 @@ import markdown
 import codecs
 import PyRSS2Gen
 import datetime
+from Crypto.Cipher import AES
+import hashlib
+import base64
 
 site_config = {
 	"title" : "MartianZ!",
-	"url" : """http://blog.4321.la""",
+	"url" : """http://blog.martianz.cn""",
 	"post_dir": os.getcwd() + os.sep + 'posts',
 }
 
@@ -28,6 +32,7 @@ def SingleFileHandler(file_path):
 	ret = {}
 	title = ''
 	date = ''
+	encrypt = 0
 	index = 1
 
 	for line in lines[1:]:
@@ -36,6 +41,8 @@ def SingleFileHandler(file_path):
 			title = line.replace('title: "','')[0:-2]
 		if line.find('date: ') == 0:
 			date = line.replace('date: ','')[0:-1]
+		if line.find('encrypt: 1') == 0:
+			encrypt = 1
 		if line.find('---') == 0:
 			break
 
@@ -46,7 +53,11 @@ def SingleFileHandler(file_path):
 	if title:
 		ret['title'] = title
 		ret['date'] = date
-		ret['content'] = markdown.markdown(content)
+		if encrypt:
+			ret['content'] = content
+		else:
+			ret['content'] = markdown.markdown(content)
+		ret['e'] = encrypt
 		ret['name'] = file_path.split(os.sep)[-1].split('.')[0]
 	return ret
 	
@@ -64,7 +75,9 @@ class MainHandler(tornado.web.RequestHandler):
 		file_list.sort(reverse=True)
 		for single_file in file_list[p:p+3]:
 			article = SingleFileHandler(single_file)
-			if article: articles.append(article)
+			if article:
+				if article['e']: article['content'] = "文章已加密，请点击标题进入浏览 =v="
+				articles.append(article)
 
 		if p > 2:
 			prev = True
@@ -82,8 +95,28 @@ class ArticleHandler(tornado.web.RequestHandler):
 	def get(self, article_id):
 		post_path = site_config["post_dir"] + os.sep + article_id.replace('.','') + '.markdown'
 		article = SingleFileHandler(post_path)
-		
-		self.render("template/article.html", title=site_config['title'], url=site_config["url"], article = article)
+		if article['e']:
+			auth_header = self.request.headers.get('Authorization')
+			if auth_header is None or not auth_header.startswith('Basic '):
+				self.set_status(401)
+				self.set_header('WWW-Authenticate', 'Basic realm=Please enter your username and password to decrypted this article')
+				self._transforms = []
+				self.finish()
+			else:
+				try:
+					auth_decoded = base64.decodestring(auth_header[6:])
+					username, password = auth_decoded.split(':', 2)
+					if username == "201314":
+						key = hashlib.sha256(password).digest()
+						cipher = AES.new(key, AES.MODE_ECB)
+						article['content'] = markdown.markdown(unicode(cipher.decrypt(base64.decodestring(article['content'])),"utf8"))
+						self.render("template/article.html", title=site_config['title'], url=site_config["url"], article = article)
+					else:
+						self.finish()
+				except:
+					self.finish()
+		else:
+			self.render("template/article.html", title=site_config['title'], url=site_config["url"], article = article)
 
 
 class NotFoundHandler(tornado.web.RequestHandler):
@@ -109,7 +142,9 @@ def RSSMaker():
 	
 	for single_file in file_list:
 		article = SingleFileHandler(single_file)
-		if article: articles.append(article)
+		if article:
+			if article['e'] == 0:
+				articles.append(article)
 		
 	rss_items = []
 	for article in articles:
