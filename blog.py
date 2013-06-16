@@ -92,16 +92,19 @@ class MainHandler(tornado.web.RequestHandler):
 		self.render("template/index.html", title=site_config['title'], url=site_config["url"], articles = articles, prev=prev, pnext=pnext, prevnum=p-3, nextnum=p+3)
 
 class ArticleHandler(tornado.web.RequestHandler):
+	def auth(self):
+		self.set_status(401)
+		self.set_header('WWW-Authenticate', 'Basic realm=Please enter your username and password to decrypted this article')
+		self._transforms = []
+		self.finish()
+
 	def get(self, article_id):
 		post_path = site_config["post_dir"] + os.sep + article_id.replace('.','') + '.markdown'
 		article = SingleFileHandler(post_path)
 		if article['e']:
 			auth_header = self.request.headers.get('Authorization')
 			if auth_header is None or not auth_header.startswith('Basic '):
-				self.set_status(401)
-				self.set_header('WWW-Authenticate', 'Basic realm=Please enter your username and password to decrypted this article')
-				self._transforms = []
-				self.finish()
+				self.auth()
 			else:
 				try:
 					auth_decoded = base64.decodestring(auth_header[6:])
@@ -112,9 +115,9 @@ class ArticleHandler(tornado.web.RequestHandler):
 						article['content'] = markdown.markdown(unicode(cipher.decrypt(base64.decodestring(article['content'])),"utf8"))
 						self.render("template/article.html", title=site_config['title'], url=site_config["url"], article = article)
 					else:
-						self.finish()
+						self.auth()
 				except:
-					self.finish()
+					self.auth()
 		else:
 			self.render("template/article.html", title=site_config['title'], url=site_config["url"], article = article)
 
