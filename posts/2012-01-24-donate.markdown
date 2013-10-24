@@ -1,30 +1,92 @@
 ---
 layout: post
-title: "捐赠 4321.La - Support future development of 4321.La"
+title: "Donate - Support future development of MartianZ.cn"
 date: 2012-01-24 22:55
 comments: true
 categories: notes
 ---
-非常高兴看到我制作的软件能够帮助到您！
+非常高兴看到我们的软件能够帮助到您！我们的软件都是免费软件，但是需要消耗我们资金和时间去制作、支持和维护。
 
-如果您喜欢我的作品，可以捐赠4321.La以支持我们后续的开发。
+如果您喜欢我们的作品，可以捐赠 MartianZ.cn 以支持我们后续的开发。
 
+
+###捐赠方式：
+
+###1.Donate via Alipay
+<br />
+<div class="alipay" style="margin: auto; text-align: center">
+
+ <a href='http://me.alipay.com/martian'> <img src='https://img.alipay.com/sys/personalprod/style/mc/btn-index.png' /> </a>
+
+</div>
+###2.Donate via PayPal
+<br />
 <!-- more -->
+<div class="paypal" style="margin: auto; text-align: center">
+	<img src="https://www.paypalobjects.com/webstatic/zh_C2/mktg/Logo-images/AM_SbyPP_mc_vs_dc_ae.jpg" alt="PayPal" /> 
+	<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+		<div>
+			<input type="hidden" name="cmd" value="_xclick" />
+			<input type="hidden" name="business" value="fzyadmin@gmail.com" />
+			<input type="hidden" name="item_name" value="Donate to MartianZ.cn" />
+			<input type="hidden" name="no_shipping" value="1" />
+			<input type="hidden" name="return" value="http://martianz.cn" />
+			<input type="hidden" name="cancel_return" value="http://martianz.cn" />
+			<input type="hidden" name="cn" value="Feature Requests" />
+			<input type="hidden" name="currency_code" value="USD" />
+			<input type="hidden" name="tax" value="0" />
+			<select name="amount" style="width: 65px;">
+				<option value="1.00">$1</option>
+				<option value="5.00">$5</option>
+				<option value="10.00">$10</option>
+				<option value="15.00" selected="selected">$15</option>
+				<option value="20.00">$20</option>
+				<option value="25.00">$25</option>
+				<option value="30.00">$30</option>
+				<option value="50.00">$50</option>
+				<option value="100.00">$100</option>
+				<option value="">Other</option>
+			</select>
+			<input type="submit" name="submit" value="Donate Once" style="margin-left: 5px; margin-top: 8px; width: 115px;" />
+		</div>
+	</form>
+	<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+		<div>
+			<input type="hidden" name="cmd" value="_xclick-subscriptions" />
+			<input type="hidden" name="business" value="fzyadmin@gmail.com" />
+			<input type="hidden" name="item_name" value="Donate to MartianZ.cn" />
+			<input type="hidden" name="no_shipping" value="1" />
+			<input type="hidden" name="return" value="http://martianz.cn" />
+			<input type="hidden" name="cancel_return" value="http://martianz.cn" />
+			<input type="hidden" name="no_note" value="1" />
+			<input type="hidden" name="currency_code" value="USD" />
+			<select name="a3" style="width: 65px;">
+				<option value="3.00">$3</option>
+				<option value="5.00" selected="selected">$5</option>
+				<option value="10.00">$10</option>
+				<option value="15.00">$15</option>
+				<option value="20.00">$20</option>
+				<option value="25.00">$25</option>
+			</select>
+			<input type="hidden" name="p3" value="1" />
+			<input type="hidden" name="t3" value="M" />
+			<input type="hidden" name="src" value="1" />
+			<input type="hidden" name="sra" value="1" />
+			<input type="hidden" name="srt" value="12" />
+			<input type="submit" name="submit" value="Donate Monthly" style="margin-left: 5px; margin-top: 8px; width: 115px;" />
+		</div>
+	</form><br/>
+	你可以点击 <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_subscr-find&amp;alias=fzyadmin@gmail.com">这里</a> 取消每月付款.
+</div>
 
+<br />
 
+###3.Donate via Amazon.cn
 
-#捐赠方式：
+<div class="amazon" style="margin: auto; text-align: center">
+<p></p>
+<p>My wish list: 
+<a href="http://www.amazon.cn/registry/wishlist/1JUEM4PZIL82C">http://www.amazon.cn/registry/wishlist/1JUEM4PZIL82C</a> </p>
 
-##1.[Donate via Alipay](https://me.alipay.com/martian)
+</div>
 
-##2.[Donate via PayPal](https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=fzyadmin%40gmail%2ecom&item_name=Support%20future%20development%20of%204321.La%20apps)
-
-
-##3.[Donate via Amazon.cn](http://www.amazon.cn/registry/wishlist/1JUEM4PZIL82C)
-
-##4.[Donate via Amazon.cn (Google Translate)](http://translate.google.com/translate?hl=en&sl=zh-CN&tl=en&u=http%3A%2F%2Fwww.amazon.cn%2Fregistry%2Fwishlist%2F1JUEM4PZIL82C)
-
-
-####(My PayPal account is certified in China, you may not be able to donate. You can choose to purchase a suitable gift which I really need, if you think this is accaptable,  take a glance at my Amazon Wish List, thank you! )
-
-###Thanks for being awesome!

@@ -1,7 +1,5 @@
 * {
-	background: transparent;
 	margin: 0;
-	border: 0;
 	padding: 0;
 	vertical-align: baseline;
 }
@@ -179,7 +177,6 @@ article li {
 }
 article img {
 	text-align: center;
-	display: block;
 	margin: 0 auto;
 
 	max-width: 570px;
