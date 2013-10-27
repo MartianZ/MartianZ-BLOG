@@ -44,7 +44,7 @@ categories: ideas
 
 **下载地址：**
 
-<http://down.4321.la/LRC-Downloader.rar>
+<http://martianlaboratory.com/musicsorter/LRC-Downloader.rar>
 
 软件采用Delphi XE开发，所以不用装什么.net库了，软件制作的时候比较仓促，因为我还有其他的项目，所以界面比较搓，希望大家谅解。
 

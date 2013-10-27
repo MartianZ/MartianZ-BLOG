@@ -73,6 +73,6 @@ MusicSorter的开发离不开Shindo同学的支持，本次发布中联合发布
 
 下载地址（MusicSorter + MusicNamer）
 
-直接下载地址：<http://down.4321.la/MusicSorterNamer20110607.zip>
+直接下载地址：<http://martianlaboratory.com/musicsorter/MusicSorterNamer20110607.zip>
 
 感谢各位的支持，欢迎大家提出意见建议，您的支持是我们最大的动力！
