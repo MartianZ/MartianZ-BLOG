@@ -90,3 +90,10 @@ categories: notes
 
 </div>
 
+###3.Donate via Ripple
+
+<div class="ripple" style="margin: auto; text-align: center">
+<p></p>
+<p>Ripple Address: rBhdwXHCEBVMdqRp9isiUd1oXPeh6Y6uAh </p>
+
+</div>
