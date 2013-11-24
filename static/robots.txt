@@ -3,3 +3,12 @@ Disallow: /
 
 User-agent: baiduspider
 Disallow: /
+
+User-agent: 360Spider
+Disallow: /
+
+User-agent: 360Spider-Image
+Disallow: /
+
+User-agent: 360Spider-Video
+Disallow: /
