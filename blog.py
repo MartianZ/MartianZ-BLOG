@@ -127,9 +127,15 @@ class NotFoundHandler(tornado.web.RequestHandler):
     	self.set_status(404)
 	self.render("template/404.html")
 
-class RSSHandler(tornado.web.RequestHandler):
+class RobotsHandler(tornado.web.RequestHandler):
 	def get(self):
 		f = open("rss.xml", "r")
+		self.write(f.read())
+		f.close()
+
+class RSSHandler(tornado.web.RequestHandler):
+	def get(self):
+		f = open("robots.txt", "r")
 		self.write(f.read())
 		f.close()
 
@@ -177,6 +183,7 @@ application = tornado.web.Application([
 	(r"/", MainHandler),
 	(r"/article/(.*)", ArticleHandler),
 	(r"/.*\.xml",RSSHandler),
+	(r"/robots.txt", RobotsHandler),
 	(r"/.*", NotFoundHandler),
 ], **settings)
 
