@@ -21,7 +21,7 @@ a:hover {
 	margin: 2em auto;
 	max-width: 960px;
 }
-header {
+#header_index {
 	position: fixed;
 	width: 180px;
 	margin-right: 40px;
@@ -65,11 +65,40 @@ header {
 	margin-left: 220px;
 
 }
+
+#main_article {
+    border-top: 4px solid #de5906;
+}
 #primary {
 	float: left;
 	width: 100%;
 	padding-top: 20px;
 }
+
+#primary_article {
+    float: left;
+    width: 100%;
+}
+
+.nav_article {
+    margin-top: 20px;
+    text-align: right;
+    font-size: 14px;
+    margin-right: 80px;
+    float: right;
+}
+
+.nava {
+    color: #8c8c8c;
+    margin-left: 15px;
+    padding-bottom: 8px;
+}
+
+.active {
+    border-bottom: 2px solid #de5906;
+}
+
+
 article {
 	background: white;
 	-webkit-border-radius: 3px;
@@ -80,13 +109,35 @@ article {
 }
 .entry-header {
 	padding: 1.625em 7.6% 0px;
+
+}
+
+.entry-header-article {
+    padding: 1.625em 7.6% 0px;
+    padding-top: 50px;
+
 }
 .entry-title, .entry-title a {
 	color: #222;
 	text-decoration: none;
-	font-size: 25px;
 	line-height: 1.5em;
 	-webkit-transition: color 400ms;
+    font-family: "Lato", 'Xin Gothic', 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', 'Helvetica Neue', "aria", sans-serif;
+    font-weight: 300;
+}
+
+.dashbottom {
+    padding-bottom: 10px;
+    border-bottom: 1px dashed #ccc;
+}
+
+.sep {
+    padding-left: 28px;
+    display: inline-block;
+    background: url(http://ww3.sinaimg.cn/large/a74eed94jw1e0wrw80w4rj.jpg) 0 0 no-repeat;
+}
+#title_article {
+
 
 }
 .entry-title a:hover {
@@ -94,10 +145,12 @@ article {
 	color:#5191C2;
 }
 .entry-meta {
-	color: #666;
-	font-size: 12px;
-	line-height: 18px;
-	padding-right: 76px;
+    margin-top: 12px;
+    color: #9f9f9f;
+    font-size: 14px;
+    height: 23px;
+    line-height: 23px;
+    margin-bottom: 10px;
 }
 time {
 	font-weight: bold;
