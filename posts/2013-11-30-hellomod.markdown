@@ -49,13 +49,10 @@ Makefile:
 
 通过 rmmod hellomod 命令可以移除内核模块。
 
-通过journalctl -f可以看到日志文件，可以看到printk()的输出
+通过journalctl -f或dmesg可以看到日志文件，可以看到printk()的输出
 
 	[root@localhost 98c7effcee3f41ef8549d7d5a93438bd]# journalctl -f
-	
-	-- Logs begin at Mon 2013-11-04 04:59:49 CST. --
-	
-	Dec 01 02:50:26 localhost kernel: <1>Hello World! from the kernel space...
-	
-	Dec 01 02:53:43 localhost kernel: <1>Goodbye, World! leaving kernel space...
+		-- Logs begin at Mon 2013-11-04 04:59:49 CST. --
+		Dec 01 02:50:26 localhost kernel: <1>Hello World! from the kernel space...
+		Dec 01 02:53:43 localhost kernel: <1>Goodbye, World! leaving kernel space...
 	
