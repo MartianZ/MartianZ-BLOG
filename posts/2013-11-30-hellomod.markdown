@@ -1,0 +1,61 @@
+---
+title: "Hello World! from the kernel space"
+date: 2013-11-30 18:56
+---
+
+Linux内核模块学习
+
+源代码 hellomod.c：
+
+    //Hello World Driver for Linux
+
+    #include <linux/module.h>
+    #include <linux/kernel.h>
+    #include <linux/init.h>
+
+    MODULE_LICENSE("GPL");
+
+    static int __init lkp_init( void )
+    {
+        printk("<1>Hello World! from the kernel space...\n");
+        return 0;
+    }
+
+    static void __exit lkp_cleanup( void )
+    {
+        printk("<1>Goodbye, World! leaving kernel space...\n");
+    }
+
+    module_init(lkp_init);
+    module_exit(lkp_cleanup);
+    
+Makefile:
+
+	obj-m += hellomod.o
+
+	default:
+		make -C /usr/src/linux-$(shell uname -r) M=$(shell pwd) modules
+	clean:  
+    	rm -rf *.o *.cmd *.mod.c *.o *.unsigned .tmp_versions *.order *.symvers
+    	
+输入make命令编译以后，即可得到输出的模块 hellomod.ko，可以用命令 insmod 将新的模块插入到内核中。
+
+	insmod hellomod.ko
+	
+通过 lsmod 命令可以检查模块是否被正确插入到内核中了：
+
+	[root@localhost hellomod]# lsmod | grep hellomod
+	hellomod                 620  0 
+
+通过 rmmod hellomod 命令可以移除内核模块。
+
+通过journalctl -f可以看到日志文件，可以看到printk()的输出
+
+	[root@localhost 98c7effcee3f41ef8549d7d5a93438bd]# journalctl -f
+	
+	-- Logs begin at Mon 2013-11-04 04:59:49 CST. --
+	
+	Dec 01 02:50:26 localhost kernel: <1>Hello World! from the kernel space...
+	
+	Dec 01 02:53:43 localhost kernel: <1>Goodbye, World! leaving kernel space...
+	
