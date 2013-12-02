@@ -182,7 +182,7 @@ time {
 	font-weight: bold;
 	line-height: 2.2em;
 }
-footer {
+.index-footer {
 	margin-left: 220px;
 	clear: both;
 }
@@ -193,6 +193,10 @@ footer {
 	line-height: 2.2em;
 	padding: 2.2em 0.5em;
 	text-align: center;
+	font-family: "Lato", 'Xin Gothic', 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', 'Helvetica Neue', "aria", sans-serif;
+}
+.comments {
+	margin: 30px;
 }
 article p {
 	margin: 0 0 24px 0;

@@ -34,22 +34,22 @@
 					<div class="entry-content">
 						{{ (article["content"]) }}
 					</div>
-					
+					<div class="comments">
+                <div id="disqus_thread"></div>
+                
+                <script type="text/javascript">
+                                var disqus_shortname = 'martian-octopress-blog'; 
+                                    (function() {
+                                        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                                })();
+                            </script>
+                </div>
 				</article>
 				
 				
-				<div class="comments">
-				<div id="disqus_thread"></div>
 				
-				<script type="text/javascript">
-            					var disqus_shortname = 'martian-octopress-blog'; 
-            						(function() {
-                						var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                						dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-                						(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-            					})();
-        					</script>
-        		</div>
         		
         		
 			</div>
@@ -57,7 +57,7 @@
 		
 		<footer>
 			<div class="div-footer">
-							Powered by <a href="https://github.com/MartianZ">MartianZ-BLOG</a>
+							Powered by <a href="https://github.com/MartianZ/MartianZ-BLOG">MartianZ-BLOG</a>
 			</div>
 		</footer>
 		</div>
