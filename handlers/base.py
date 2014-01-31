@@ -18,6 +18,10 @@ class BaseHandler(RequestHandler):
 	def posts_dir(self):
 		return options.posts_dir;
 
+        @property
+        def link_dir(self):
+                return options.link_dir;
+
 	def markdown_parser(self, file_path):
 		f = codecs.open(file_path, mode='r', encoding='utf8')
 		lines = []

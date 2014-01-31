@@ -16,6 +16,7 @@ define("port", default=8888, help="the port tornado listen to")
 define("site_name", default="MartianZ!", help="blog site name")
 define("site_url", default="http://blog.martianz.cn", help="blog site url")
 define("posts_dir", default=os.getcwd() + os.sep + "posts", help="posts_dir")
+define("link_dir", default=os.getcwd() + os.sep + "link", help="link dir")
 
 class Application(web.Application):
 	def __init__(self):

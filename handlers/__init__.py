@@ -3,7 +3,7 @@
 
 handlers = []
 
-modules = ["index", "article", "rss", "error"]
+modules = ["index", "article", "rss", "link", "error"]
 
 for module in modules:
 	module = __import__("handlers."+module, fromlist=["handlers"])
