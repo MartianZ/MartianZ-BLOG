@@ -15,3 +15,4 @@ Links:
 2. [Kouga's Blog](http://kouga.us/)
 3. Shindo大菊苣的[Collection](http://sdou.net/)
 4. [平芜泫寂](http://www.ipwx.me/)
+5. [Saffi and Rivsen's Blog](https://rivsen.rs-work.me/)
