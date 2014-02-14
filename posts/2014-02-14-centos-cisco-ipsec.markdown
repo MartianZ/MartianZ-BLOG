@@ -82,8 +82,8 @@ KxxxWaxx买的VPN过期了，100元一年，自己主要是在iOS设备上用一
 
 		iptables -A INPUT -p udp -–dport 500 -j ACCEPT
 		iptables -A INPUT -p udp --dport 4500 -j ACCEPT
-		iptables -t nat -A POSTROUTING -s 10.12.0.0/24 -o eth0 -j MASQUERADE
-		iptables -A FORWARD -s 10.12.0.0/24 -j ACCEPT
+		iptables -t nat -A POSTROUTING -s 192.168.7.0/24 -o eth0 -j MASQUERADE
+		iptables -A FORWARD -s 192.168.7.0/24 -j ACCEPT
 		iptables-save
 		
 5. 设置IPv4 forward
