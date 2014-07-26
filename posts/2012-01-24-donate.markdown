@@ -16,7 +16,7 @@ categories: notes
 <br />
 <div class="alipay" style="margin: auto; text-align: center">
 
- <a href='http://me.alipay.com/martian'> <img src='https://img.alipay.com/sys/personalprod/style/mc/btn-index.png' /> </a>
+支付宝帐号：fzyadmin@gmail.com
 
 </div>
 ###2.Donate via PayPal
